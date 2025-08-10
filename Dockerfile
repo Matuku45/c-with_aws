@@ -1,18 +1,20 @@
-# Use the official .NET SDK image to build the app
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Copy csproj and restore as distinct layers
-COPY *.sln .
+# Copy the solution file and project files
+COPY *.sln ./
 COPY myWEBAplication/*.csproj ./myWEBAplication/
-RUN dotnet restore
 
-# Copy everything and build
+# Restore using the solution file explicitly
+RUN dotnet restore myWEBAplication.sln
+
+# Copy everything else and build
 COPY myWEBAplication/. ./myWEBAplication/
 WORKDIR /src/myWEBAplication
+
 RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
 
-# Build runtime image
+# Runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
