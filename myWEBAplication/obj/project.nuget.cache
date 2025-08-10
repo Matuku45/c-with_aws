@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CrpJgt0SRXY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Thabiso\\Desktop\\myWEBAplication\\myWEBAplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Thabiso\\.nuget\\packages\\awssdk.core\\4.0.0.21\\awssdk.core.4.0.0.21.nupkg.sha512",
+    "C:\\Users\\Thabiso\\.nuget\\packages\\awssdk.dynamodbv2\\4.0.3.4\\awssdk.dynamodbv2.4.0.3.4.nupkg.sha512",
+    "C:\\Users\\Thabiso\\.nuget\\packages\\awssdk.s3\\4.0.6.4\\awssdk.s3.4.0.6.4.nupkg.sha512"
+  ],
+  "logs": []
+}
